@@ -1,0 +1,15 @@
+{
+    "name": "tv-platform",
+    "version": "0.0.1",
+    "main": "index.js",
+    "author": "Angélique Zheng",
+    "license": "MIT",
+    "private": true,
+    "scripts": {},
+    "workspaces": [
+        "backoffice"
+    ],
+    "devDependencies": {
+        "prettier": "2.8.2"
+    }
+}
