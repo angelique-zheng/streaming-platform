@@ -1,0 +1,49 @@
+{
+    "kind": "collectionType",
+    "collectionName": "series",
+    "info": {
+        "singularName": "serie",
+        "pluralName": "series",
+        "displayName": "Serie",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "informations": {
+            "type": "component",
+            "repeatable": false,
+            "component": "informations.general",
+            "required": true
+        },
+        "numberOfSeasons": {
+            "type": "integer"
+        },
+        "directors": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::person.person",
+            "mappedBy": "director_serie"
+        },
+        "castings": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::person.person",
+            "mappedBy": "casting_serie"
+        },
+        "seasons": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::season.season",
+            "mappedBy": "serie"
+        },
+        "genres": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::genre.genre",
+            "mappedBy": "serie"
+        }
+    }
+}

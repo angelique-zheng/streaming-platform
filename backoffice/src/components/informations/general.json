@@ -1,0 +1,49 @@
+{
+    "collectionName": "components_informations_generals",
+    "info": {
+        "displayName": "General",
+        "icon": "align-justify",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "synopsis": {
+            "type": "text",
+            "required": true
+        },
+        "releaseDate": {
+            "type": "date",
+            "required": true
+        },
+        "poster": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": ["images", "files", "videos", "audios"]
+        },
+        "rating": {
+            "type": "integer",
+            "max": 10,
+            "min": 0
+        },
+        "company": {
+            "type": "string",
+            "required": true
+        },
+        "trending": {
+            "type": "boolean",
+            "default": false,
+            "required": true
+        },
+        "thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": ["images", "files", "videos", "audios"]
+        }
+    }
+}

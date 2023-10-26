@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "people",
+    "info": {
+        "singularName": "person",
+        "pluralName": "people",
+        "displayName": "Person",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "firstname": {
+            "type": "string",
+            "required": true
+        },
+        "lastname": {
+            "type": "string",
+            "required": true
+        },
+        "director_movie": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::movie.movie",
+            "inversedBy": "directors"
+        },
+        "casting_movie": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::movie.movie",
+            "inversedBy": "castings"
+        },
+        "director_serie": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::serie.serie",
+            "inversedBy": "directors"
+        },
+        "casting_serie": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::serie.serie",
+            "inversedBy": "castings"
+        }
+    }
+}
