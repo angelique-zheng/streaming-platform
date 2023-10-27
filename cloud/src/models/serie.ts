@@ -1,30 +1,30 @@
 import { DecoderFunction, array, number, record, string } from 'typescript-json-decoder';
 import { DecoderError } from '../utils/errors/DecoderError';
 import { Information, InformationDecoder } from './information';
-import { Media, MediaDecoder } from './media';
 import { People, PeopleDecoder } from './person';
+import { Seasons, SeasonsDecoder } from './season';
 
-export type Movie = Information & {
+export type Serie = Information & {
     id: number;
-    duration: number;
+    numberOfSeasons: number;
     directors: People;
     castings: People;
     genres: string[];
-    video: Media;
+    seasons: Seasons;
 };
 
-export const MovieDecoder: DecoderFunction<Movie> = (value: unknown) => {
+export const SerieDecoder: DecoderFunction<Serie> = (value: unknown) => {
     if (typeof value === 'object' && value !== null && 'informations' in value) {
         const information = InformationDecoder(value.informations);
-        const movieWithoutInformation = record({
+        const serieWithoutInformation = record({
             id: number,
-            duration: number,
+            numberOfSeasons: number,
             directors: PeopleDecoder,
             castings: PeopleDecoder,
             genres: array(string),
-            video: MediaDecoder
+            seasons: SeasonsDecoder
         })(value);
-        return { ...information, ...movieWithoutInformation };
+        return { ...information, ...serieWithoutInformation };
     }
     throw new DecoderError('Missing attribute');
 };
