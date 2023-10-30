@@ -1,32 +1,32 @@
 {
-    "kind": "collectionType",
-    "collectionName": "genres",
-    "info": {
-        "singularName": "genre",
-        "pluralName": "genres",
-        "displayName": "Genre"
+  "kind": "collectionType",
+  "collectionName": "genres",
+  "info": {
+    "singularName": "genre",
+    "pluralName": "genres",
+    "displayName": "Genre"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
-    "options": {
-        "draftAndPublish": true
+    "movie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::movie.movie",
+      "inversedBy": "genres"
     },
-    "pluginOptions": {},
-    "attributes": {
-        "name": {
-            "type": "string",
-            "required": true,
-            "unique": true
-        },
-        "movie": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::movie.movie",
-            "inversedBy": "genres"
-        },
-        "serie": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::serie.serie",
-            "inversedBy": "genres"
-        }
+    "serie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::serie.serie",
+      "inversedBy": "genres"
     }
+  }
 }

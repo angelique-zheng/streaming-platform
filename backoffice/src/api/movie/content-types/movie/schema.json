@@ -31,7 +31,8 @@
             "mappedBy": "casting_movie"
         },
         "duration": {
-            "type": "integer"
+            "type": "integer",
+            "required": true
         },
         "video": {
             "type": "media",
