@@ -1,3 +1,4 @@
+import { Cinematography } from '../utils/types';
 import { Information } from './information';
 import { People } from './person';
 import { Seasons } from './season';
@@ -12,3 +13,7 @@ export type Serie = Information & {
 };
 
 export type Series = Array<Serie>;
+
+export const isSerie = (param: Cinematography): param is Serie => {
+    return (param as Serie).seasons !== undefined;
+};
