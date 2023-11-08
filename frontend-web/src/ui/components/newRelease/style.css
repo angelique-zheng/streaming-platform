@@ -1,0 +1,17 @@
+.new-release-container {
+    /* grid-area: grid-row-start / column-start / row-end (excluded) / column-end (excluded) ; */
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 0 2rem;
+}
+
+.new-release-container > h1 > a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+}
+
+.new-release {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+}

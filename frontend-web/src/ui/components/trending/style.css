@@ -1,0 +1,17 @@
+.trending {
+    /* grid-area: grid-row-start / column-start / row-end (excluded) / column-end (excluded) ; */
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+}
+
+.trending > h1 {
+    color: white;
+    font-size: 28px;
+    margin-top: 1rem;
+}
+
+.carousel {
+    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+}

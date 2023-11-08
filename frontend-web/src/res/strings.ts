@@ -13,6 +13,12 @@ const fr = {
             sortByGenre: 'Trier par genres : ',
             all: 'Tous'
         },
+        newRelease: {
+            newRelease: 'Nouveautés'
+        },
+        trending: {
+            spotlight: 'En vedette'
+        },
         videoModal: {
             close: 'X',
             videoPlaybackNotSupported: 'Votre navigateur ne supporte pas la lecture de vidéos.'
