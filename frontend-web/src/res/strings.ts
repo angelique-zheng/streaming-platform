@@ -5,6 +5,10 @@ const fr = {
         series: 'Séries'
     },
     components: {
+        episodes: {
+            episode: 'Episode',
+            episodes: 'Episodes'
+        },
         genreSelector: {
             sortByGenre: 'Trier par genres : ',
             all: 'Tous'

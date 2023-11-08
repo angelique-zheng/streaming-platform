@@ -1,0 +1,41 @@
+.episodes-container > h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.episodes {
+    padding: 0;
+}
+
+.episode-container {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    border-top: solid 1px #aaaaaa9a;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.episode-container:last-child {
+    border-bottom: solid 1px #aaaaaa9a;
+}
+
+.episode-container:hover {
+    background-color: #8784a466;
+}
+
+.episode-img {
+    grid-column: 1 / 2;
+    width: 17rem;
+    height: 10rem;
+    object-fit: cover;
+    margin: auto;
+}
+
+.episode-informations {
+    grid-column: 2 / 3;
+    color: white;
+}
+
+.episode-informations > h2 {
+    color: white;
+}
