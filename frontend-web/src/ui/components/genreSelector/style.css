@@ -1,0 +1,32 @@
+.genres-selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+    color: white;
+    background-color: #1c1d2f;
+    margin: 16px;
+    padding: 16px;
+}
+
+.genres-selector-container > li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+.genres-selector-container > li.active {
+    background-color: #8784a466;
+    color: #fff;
+    border-color: #333;
+    transition: background-color 0.2s;
+}
+
+.genres-selector-container > li:hover {
+    opacity: 0.7;
+}
