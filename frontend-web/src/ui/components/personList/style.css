@@ -1,0 +1,21 @@
+.people-container {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.people-container > li,
+.people-container > p {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    margin-right: 0.5rem;
+}
+
+.people-container > li:after {
+    content: ' /';
+}
+
+.people-container > li:last-child:after {
+    content: none;
+}
