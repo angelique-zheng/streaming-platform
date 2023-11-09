@@ -53,13 +53,15 @@ main.detail-main {
     margin-top: 10px;
 }
 
-.synopsis {
+.synopsis,
+.synopsis-seasons {
     /* grid-area: grid-row-start / column-start / row-end (excluded) / column-end (excluded) ; */
     grid-area: 2 / 1 / 3 / span 2;
     margin: 1rem 10rem 1rem 1rem;
 }
 
-.synopsis > p {
+.synopsis > p,
+.synopsis-seasons > p {
     color: white;
     font-size: 20px;
 }
@@ -67,4 +69,23 @@ main.detail-main {
 .synopsis > h2 {
     color: white;
     font-size: 24px;
+}
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+}
+
+.tabs > h2 {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.tabs > h2:hover {
+    color: #003afee6;
+}
+
+.tabs > h2.active {
+    color: #ff9933e6;
 }

@@ -1,9 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { FirestoreProvider } from './providers/FirestoreProvider';
 import { MovieDetails } from './ui/components/details/MovieDetails';
+import { SerieDetails } from './ui/components/details/SerieDetails';
 import { SideBar } from './ui/components/sideBar/SideBar';
 import { Home } from './ui/pages/home/Home';
 import { MoviesPage } from './ui/pages/movies/MoviesPage';
+import { SeriesPage } from './ui/pages/series/SeriesPage';
 
 export const App: React.FC = () => {
     return (
@@ -14,7 +16,9 @@ export const App: React.FC = () => {
                     <Route path="/" element={<Navigate to="/home" replace />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/movies" element={<MoviesPage />} />
+                    <Route path="/series" element={<SeriesPage />} />
                     <Route path="/movies/:id" element={<MovieDetails />} />
+                    <Route path="/series/:id" element={<SerieDetails />} />
                 </Routes>
             </FirestoreProvider>
         </BrowserRouter>

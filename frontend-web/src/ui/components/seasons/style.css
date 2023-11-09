@@ -1,0 +1,22 @@
+.seasons {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.seasons > li {
+    color: white;
+    background-color: #8784a44d;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.seasons > li:hover {
+    background-color: #d3ceff4d;
+}
+
+.seasons > li.active {
+    background-color: #003afee6;
+}

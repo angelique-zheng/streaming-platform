@@ -9,7 +9,9 @@ const fr = {
             mainActors: 'Acteurs principaux :',
             play: 'Lire',
             producedBy: 'Réaliser par :',
-            releaseDate: 'Date de sortie'
+            releaseDate: 'Date de sortie',
+            seasons: 'Saisons',
+            synopsis: 'Synopsis'
         },
         episodes: {
             episode: 'Episode',
@@ -33,6 +35,9 @@ const fr = {
     page: {
         movies: {
             moviesArea: 'Espace Films'
+        },
+        series: {
+            seriesArea: 'Espace Séries'
         }
     }
 };
