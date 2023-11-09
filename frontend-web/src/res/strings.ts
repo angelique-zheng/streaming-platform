@@ -5,6 +5,12 @@ const fr = {
         series: 'Séries'
     },
     components: {
+        details: {
+            mainActors: 'Acteurs principaux :',
+            play: 'Lire',
+            producedBy: 'Réaliser par :',
+            releaseDate: 'Date de sortie'
+        },
         episodes: {
             episode: 'Episode',
             episodes: 'Episodes'
@@ -22,6 +28,11 @@ const fr = {
         videoModal: {
             close: 'X',
             videoPlaybackNotSupported: 'Votre navigateur ne supporte pas la lecture de vidéos.'
+        }
+    },
+    page: {
+        movies: {
+            moviesArea: 'Espace Films'
         }
     }
 };

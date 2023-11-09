@@ -1,0 +1,9 @@
+main.movies-main {
+    grid-column: 2 / 3;
+    margin-top: 36px;
+}
+
+.movies-main > h1 {
+    color: white;
+    font-size: 28px;
+}
