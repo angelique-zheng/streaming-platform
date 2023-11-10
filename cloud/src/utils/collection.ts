@@ -1,4 +1,4 @@
-import { StrapiError } from './errors/StrapiError';
+import { StrapiModel } from '../payloads/StrapiPayload';
 
 export const COLLECTIONS = {
     Movies: 'movies',
@@ -6,7 +6,9 @@ export const COLLECTIONS = {
     Genres: 'genres'
 } as const;
 
-export const getCollectionNameFromModel = (model: string) => {
+export type CollectionsType = (typeof COLLECTIONS)[keyof typeof COLLECTIONS];
+
+export const getCollectionNameFromModel = (model: StrapiModel): CollectionsType => {
     switch (model) {
         case 'movie':
             return COLLECTIONS.Movies;
@@ -14,7 +16,5 @@ export const getCollectionNameFromModel = (model: string) => {
             return COLLECTIONS.Series;
         case 'genre':
             return COLLECTIONS.Genres;
-        default:
-            throw new StrapiError('Unhandle model');
     }
 };
