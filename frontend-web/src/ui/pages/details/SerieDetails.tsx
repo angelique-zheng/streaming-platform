@@ -4,10 +4,10 @@ import { Media } from '../../../models/media';
 import { Serie } from '../../../models/serie';
 import { strings } from '../../../res/strings';
 import { convertTimestampsToStringDate } from '../../../utils/date';
-import { GenreList } from '../genreList/GenreList';
-import { PersonList } from '../personList/PersonList';
-import { SeasonsComponent } from '../seasons/SeasonsComponent';
-import { VideoModal } from '../videoModal/VideoModal';
+import { GenreList } from '../../components/genreList/GenreList';
+import { PersonList } from '../../components/personList/PersonList';
+import { SeasonsComponent } from '../../components/seasons/SeasonsComponent';
+import { VideoModal } from '../../components/videoModal/VideoModal';
 import './style.css';
 
 type LocationState = Serie;

@@ -5,9 +5,9 @@ import { useLocation } from 'react-router-dom';
 import { Movie } from '../../../models/movie';
 import { strings } from '../../../res/strings';
 import { convertTimestampsToStringDate } from '../../../utils/date';
-import { GenreList } from '../genreList/GenreList';
-import { PersonList } from '../personList/PersonList';
-import { VideoModal } from '../videoModal/VideoModal';
+import { GenreList } from '../../components/genreList/GenreList';
+import { PersonList } from '../../components/personList/PersonList';
+import { VideoModal } from '../../components/videoModal/VideoModal';
 import './style.css';
 
 type LocationState = Movie;
