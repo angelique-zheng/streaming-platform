@@ -14,17 +14,24 @@ export type Serie = Information & {
 };
 
 export const SerieDecoder: DecoderFunction<Serie> = (value: unknown) => {
-    if (typeof value === 'object' && value !== null && 'informations' in value) {
-        const information = InformationDecoder(value.informations);
-        const serieWithoutInformation = record({
-            id: number,
-            numberOfSeasons: number,
-            directors: PeopleDecoder,
-            castings: PeopleDecoder,
-            genres: array(string),
-            seasons: SeasonsDecoder
-        })(value);
-        return { ...information, ...serieWithoutInformation };
+    try {
+        if (typeof value === 'object' && value !== null && 'informations' in value) {
+            const information = InformationDecoder(value.informations);
+            const serieWithoutInformation = record({
+                id: number,
+                numberOfSeasons: number,
+                directors: PeopleDecoder,
+                castings: PeopleDecoder,
+                genres: array(string),
+                seasons: SeasonsDecoder
+            })(value);
+            return { ...information, ...serieWithoutInformation };
+        }
+        throw new DecoderError("Missing 'informations' attribute");
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
     }
-    throw new DecoderError('Missing attribute');
 };

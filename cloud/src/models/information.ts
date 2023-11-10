@@ -1,5 +1,6 @@
 import { DecoderFunction, boolean, number, optional, record, string } from 'typescript-json-decoder';
 import { decodeDateToTimestamp } from '../utils/decoder';
+import { DecoderError } from '../utils/errors/DecoderError';
 import { Media, MediaDecoder } from './media';
 
 export type Information = {
@@ -14,14 +15,21 @@ export type Information = {
 };
 
 export const InformationDecoder: DecoderFunction<Information> = (value: unknown) => {
-    return record({
-        title: string,
-        synopsis: string,
-        releaseDate: decodeDateToTimestamp,
-        poster: MediaDecoder,
-        rating: optional(number),
-        company: string,
-        trending: boolean,
-        thumbnail: MediaDecoder
-    })(value);
+    try {
+        return record({
+            title: string,
+            synopsis: string,
+            releaseDate: decodeDateToTimestamp,
+            poster: MediaDecoder,
+            rating: optional(number),
+            company: string,
+            trending: boolean,
+            thumbnail: MediaDecoder
+        })(value);
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
+    }
 };

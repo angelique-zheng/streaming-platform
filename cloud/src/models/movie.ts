@@ -14,17 +14,24 @@ export type Movie = Information & {
 };
 
 export const MovieDecoder: DecoderFunction<Movie> = (value: unknown) => {
-    if (typeof value === 'object' && value !== null && 'informations' in value) {
-        const information = InformationDecoder(value.informations);
-        const movieWithoutInformation = record({
-            id: number,
-            duration: number,
-            directors: PeopleDecoder,
-            castings: PeopleDecoder,
-            genres: array(string),
-            video: MediaDecoder
-        })(value);
-        return { ...information, ...movieWithoutInformation };
+    try {
+        if (typeof value === 'object' && value !== null && 'informations' in value) {
+            const information = InformationDecoder(value.informations);
+            const movieWithoutInformation = record({
+                id: number,
+                duration: number,
+                directors: PeopleDecoder,
+                castings: PeopleDecoder,
+                genres: array(string),
+                video: MediaDecoder
+            })(value);
+            return { ...information, ...movieWithoutInformation };
+        }
+        throw new DecoderError("Missing 'informations' attribute");
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
     }
-    throw new DecoderError('Missing attribute');
 };

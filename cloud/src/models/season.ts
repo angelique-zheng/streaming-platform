@@ -1,4 +1,5 @@
 import { DecoderFunction, array, number, record, string } from 'typescript-json-decoder';
+import { DecoderError } from '../utils/errors/DecoderError';
 import { Episodes, EpisodesDecoder } from './episode';
 
 export type Season = {
@@ -9,16 +10,30 @@ export type Season = {
 };
 
 export const SeasonDecoder: DecoderFunction<Season> = (value: unknown) => {
-    return record({
-        title: string,
-        seasonNumber: number,
-        numberOfEpisodes: number,
-        episodes: EpisodesDecoder
-    })(value);
+    try {
+        return record({
+            title: string,
+            seasonNumber: number,
+            numberOfEpisodes: number,
+            episodes: EpisodesDecoder
+        })(value);
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
+    }
 };
 
 export type Seasons = Array<Season>;
 
 export const SeasonsDecoder: DecoderFunction<Seasons> = (value: unknown) => {
-    return array(SeasonDecoder)(value);
+    try {
+        return array(SeasonDecoder)(value);
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
+    }
 };

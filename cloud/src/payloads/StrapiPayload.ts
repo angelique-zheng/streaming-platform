@@ -3,6 +3,7 @@ import { Genre, GenreDecoder } from '../models/genre';
 import { Movie, MovieDecoder } from '../models/movie';
 import { Serie, SerieDecoder } from '../models/serie';
 import { constant } from '../utils/decoder';
+import { DecoderError } from '../utils/errors/DecoderError';
 import { StrapiError } from '../utils/errors/StrapiError';
 
 export type StrapiEvents = 'entry.create' | 'entry.update' | 'entry.delete' | 'entry.publish' | 'entry.unpublish';
@@ -61,6 +62,9 @@ export const StrapiPayloadDecoder: DecoderFunction<StrapiPayload> = (value: unkn
             union(StrapiMoviePayloadDecoder, StrapiSeriePayloadDecoder, StrapiGenrePayloadDecoder)
         )(value);
     } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
         throw new StrapiError('Payload does not match StrapiPayload type');
     }
 };

@@ -1,4 +1,5 @@
 import { DecoderFunction, array, number, record, string } from 'typescript-json-decoder';
+import { DecoderError } from '../utils/errors/DecoderError';
 
 export type Genre = {
     id: number;
@@ -6,14 +7,25 @@ export type Genre = {
 };
 
 export const GenreDecoder: DecoderFunction<Genre> = (value: unknown) => {
-    return record({
-        id: number,
-        name: string
-    })(value);
+    try {
+        return record({
+            id: number,
+            name: string
+        })(value);
+    } catch (error) {
+        throw new DecoderError(error);
+    }
 };
 
 export type Genres = Array<Genre>;
 
 export const GenresDecoder: DecoderFunction<Genres> = (value: unknown) => {
-    return array(GenreDecoder)(value);
+    try {
+        return array(GenreDecoder)(value);
+    } catch (error) {
+        if (error instanceof DecoderError) {
+            throw error;
+        }
+        throw new DecoderError(error);
+    }
 };
