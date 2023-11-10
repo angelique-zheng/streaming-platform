@@ -1,57 +1,58 @@
-# 🚀 Getting started with Strapi
+# Streaming Plateform backoffice
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+CMS to provide content for the streaming application.
 
-### `develop`
+## Prerequisites
+
+### Environment variables
+
+Your `.env` file must contains the following keys:
+
+| Keys                          | Description                                                              |
+| ----------------------------- | ------------------------------------------------------------------------ |
+| `HOST`                        | Strapi host                                                              |
+| `PORT`                        | Strapi port                                                              |
+| `APP_KEYS`                    | The secret keys used to sign the session cookies                         |
+| `API_TOKEN_SALT`              | Salt used to generate API tokens                                         |
+| `ADMIN_JWT_SECRET`            | The secret used to sign the JWT for the Admin panel                      |
+| `TRANSFER_TOKEN_SALT`         | Transfer tokens allow users to authorize the strapi transfer CLI command |
+| `DATABASE_CLIENT`             | The database client to use                                               |
+| `DATABASE_FILENAME`           | The database schema file                                                 |
+| `JWT_SECRET`                  | The secret used to sign the JWT for the Users-Permissions plugin         |
+| `WEBHOOKS_POPULATE_RELATIONS` | Enable or disable receiving populated relations in webhooks              |
+
+## Run the application
+
+### Development mode
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
-# or
 yarn develop
 ```
 
-### `start`
+### Development mode without auroReload
 
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
 ```
-npm run start
-# or
 yarn start
 ```
 
-### `build`
+### Production mode
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+Builds the app for production. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
 ```
-npm run build
-# or
 yarn build
 ```
 
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-## 📚 Learn more
+## 📚 Learn more about Srapi
 
 -   [Resource center](https://strapi.io/resource-center) - Strapi resource center.
 -   [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+-   [Strapi Command Line Interface](https://docs.strapi.io/dev-docs/cli) - Strapi CLI documentation
 -   [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
 -   [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
 -   [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
--   [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
--   [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
--   [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+-   [Strapi Cloud](https://cloud.strapi.io) - Strapi cloud for deployment
