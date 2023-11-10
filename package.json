@@ -1,15 +1,18 @@
 {
-    "name": "tv-platform",
-    "version": "0.0.1",
+    "name": "streaming-platform",
+    "version": "1.0.0",
     "main": "index.js",
     "author": "Angélique Zheng",
-    "license": "MIT",
     "private": true,
-    "scripts": {},
     "workspaces": [
-        "backoffice"
+        "backoffice",
+        "cloud",
+        "frontend-web"
     ],
     "devDependencies": {
         "prettier": "2.8.2"
+    },
+    "engines": {
+        "node": "18"
     }
 }
