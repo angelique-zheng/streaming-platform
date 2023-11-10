@@ -1,6 +1,6 @@
 import { strings } from '../res/strings';
 
-export type MainRoutes = {
+type MainRoutes = {
     home: undefined;
     movies: { id?: string };
     series: { id?: string };

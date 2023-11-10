@@ -1,4 +1,4 @@
-# Streaming Plateform application
+# Streaming Platform application
 
 [React](https://react.dev/) streaming application.
 

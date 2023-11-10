@@ -12,8 +12,10 @@ admin.initializeApp();
 exports.strapiWebhook = functions.https.onRequest(async (request, response) => {
     try {
         const payload = StrapiPayloadDecoder(request.body);
-        console.log('Event type:', payload.event);
         const collectionName = getCollectionNameFromModel(payload.model);
+
+        console.log('Event type:', payload.event);
+
         switch (payload.event) {
             case 'entry.publish':
             case 'entry.update':

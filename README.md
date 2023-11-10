@@ -1,6 +1,6 @@
 # Streaming platform
 
-Streaming platform with [React](https://react.dev/) application, [Strapi](https://strapi.io/) backoffice and serverless backend with [Firebase Cloud Functions](https://firebase.google.com/docs/functions)
+Streaming platform with [React](https://react.dev/) application, [Strapi](https://strapi.io/) back-office and serverless backend with [Firebase Cloud Functions](https://firebase.google.com/docs/functions)
 
 ## Installation
 

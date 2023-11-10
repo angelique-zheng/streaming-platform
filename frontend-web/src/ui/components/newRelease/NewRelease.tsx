@@ -7,9 +7,11 @@ import './style.css';
 export const NewRelease: React.FC = () => {
     const { movies, series } = useFirestore();
     const contents = useMemo(() => {
-        return [...movies, ...series].sort((a, b) => {
-            return b.releaseDate - a.releaseDate;
-        });
+        return [...movies, ...series]
+            .sort((a, b) => {
+                return b.releaseDate - a.releaseDate;
+            })
+            .slice(0, 8);
     }, [movies, series]);
 
     return (

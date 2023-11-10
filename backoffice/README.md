@@ -1,4 +1,4 @@
-# Streaming Plateform backoffice
+# Streaming Platform back-office
 
 CMS to provide content for the streaming application.
 
@@ -6,7 +6,7 @@ CMS to provide content for the streaming application.
 
 ### Environment variables
 
-Your `.env` file must contains the following keys:
+Your `.env` file must contain the following keys:
 
 | Keys                          | Description                                                              |
 | ----------------------------- | ------------------------------------------------------------------------ |

@@ -1,4 +1,4 @@
-# Streaming Plateform server
+# Streaming Platform server
 
 Cloud function that triggers when data is added to the Strapi CMS and saves the data in Firestore.
 
@@ -16,11 +16,12 @@ yarn serve
 
 Follow these steps to deploy Cloud Functions in the Firebase project:
 
--   Add the Firebase project ID to `.firebaserc`, in the field `projects`. Example:
+-   In the `.firebaserc` file, create an alias with your Firebase project ID, in the `projects` field. Example of alias creation:
     ```
     {
         "projects": {
-            "dev": "project-id"
+            "dev": "project-id",
+            ...
         }
     }
     ```
@@ -28,7 +29,7 @@ Follow these steps to deploy Cloud Functions in the Firebase project:
     ```
     "deploy": "firebase deploy --only functions --project=dev"
     ```
--   If you don't want to use the `--project` flag, you can define the project locally with `firebase use [project-id]` so that firebase knows which project to use.
+-   If you don't want to use the `--project` flag, you can define the project locally with `firebase use [project-id]` so that Firebase knows which project to use.
 
 -   Run the following command to deploy:
 
