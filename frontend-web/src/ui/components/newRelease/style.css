@@ -1,7 +1,7 @@
 .new-release-container {
     /* grid-area: grid-row-start / column-start / row-end (excluded) / column-end (excluded) ; */
     grid-area: 2 / 1 / 3 / 2;
-    margin: 0 2rem;
+    margin: 0 32px;
 }
 
 .new-release-container > h1 > a {
@@ -13,5 +13,5 @@
 .new-release {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 1rem;
+    margin-left: 16px;
 }

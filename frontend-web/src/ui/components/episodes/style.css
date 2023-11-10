@@ -9,9 +9,9 @@
 
 .episode-container {
     display: grid;
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 320px 1fr;
     border-top: solid 1px #aaaaaa9a;
-    padding: 1rem;
+    padding: 16px;
     cursor: pointer;
 }
 
@@ -25,8 +25,8 @@
 
 .episode-img {
     grid-column: 1 / 2;
-    width: 17rem;
-    height: 10rem;
+    width: 272px;
+    height: 160px;
     object-fit: cover;
     margin: auto;
 }

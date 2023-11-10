@@ -9,7 +9,7 @@
     display: inline-block;
     color: white;
     font-size: 18px;
-    margin-right: 0.5rem;
+    margin-right: 8px;
 }
 
 .people-container > li:after {
